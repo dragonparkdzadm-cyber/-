@@ -47,7 +47,7 @@
     <h1>Знайди правильну відповідь!</h1>
     <p>Введи слово, щоб дізнатися, куди рухатися далі.</p>
     <form id="answerForm">
-      <input id="answer" type="number" inputmode="numeric" placeholder="Введи слово..." aria-label="Введи число" required>
+      <input id="answer" type="text" inputmode="numeric" placeholder="Введи слово..." aria-label="Введи число" required>
       <button type="submit">Перевірити</button>
     </form>
     <div id="message" role="status" aria-live="polite"></div>
@@ -63,7 +63,7 @@
       const value = input.value.trim();
       if (value === '') return;
 
-      if (value === 'Кава') {
+      if (value.trim().toLowerCase() === 'Кава')  {
         message.className = 'success';
         message.textContent = '🎉 Правильно! Відправляйся на бар 1 поверху і отримай від них презент';
         input.disabled = true;
