@@ -45,9 +45,9 @@
   <main>
     <div class="lock">🔐</div>
     <h1>Знайди правильну відповідь!</h1>
-    <p>Введи число, щоб дізнатися, куди рухатися далі.</p>
+    <p>Введи слово, щоб дізнатися, куди рухатися далі.</p>
     <form id="answerForm">
-      <input id="answer" type="number" inputmode="numeric" placeholder="Введи число..." aria-label="Введи число" required>
+      <input id="answer" type="number" inputmode="numeric" placeholder="Введи слово..." aria-label="Введи число" required>
       <button type="submit">Перевірити</button>
     </form>
     <div id="message" role="status" aria-live="polite"></div>
@@ -63,9 +63,9 @@
       const value = input.value.trim();
       if (value === '') return;
 
-      if (value === '22') {
+      if (value === 'Кава') {
         message.className = 'success';
-        message.textContent = '🎉 Правильно! Шукай далі у шафчику №22!';
+        message.textContent = '🎉 Правильно! Відправляйся на бар 1 поверху і отримай від них презент';
         input.disabled = true;
         form.querySelector('button').disabled = true;
         form.querySelector('button').textContent = 'Відповідь знайдено';
@@ -76,7 +76,7 @@
           message.textContent = 'Не вірно! Ми віримо в тебе, спробуй ще! 💪';
         } else {
           message.className = 'hint';
-          message.textContent = '💡 Підказка: зверни увагу на множення!';
+          message.textContent = '💡 Підказка: Кобальт, Аргон, Ванадій, Аргон';
         }
       }
       input.value = '';
